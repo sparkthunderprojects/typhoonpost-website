@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 /** Product windows drawn in HTML so they stay sharp, load instantly and can be indexed. */
 
-function Window({ label, children, className = '' }: { label: string; children: ReactNode; className?: string }) {
+export function Window({ label, children, className = '' }: { label: string; children: ReactNode; className?: string }) {
   return (
     <div
       role="img"
@@ -17,7 +17,7 @@ function Window({ label, children, className = '' }: { label: string; children: 
 
 const AVATARS = ['bg-[#0F6CBD]', 'bg-[#2E7D6B]', 'bg-[#B4572E]', 'bg-[#6B4FA0]', 'bg-[#33607A]'];
 
-function Avatar({ name, i, size = 34 }: { name: string; i: number; size?: number }) {
+export function Avatar({ name, i, size = 34 }: { name: string; i: number; size?: number }) {
   return (
     <span
       className={`flex shrink-0 items-center justify-center rounded-full text-[12px] font-semibold text-white ${AVATARS[i % AVATARS.length]}`}

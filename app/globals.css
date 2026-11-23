@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-fog font-sans text-sea antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid #0f6cbd;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: #dceBf8;
+    color: #0a1c26;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[15px] font-semibold transition-colors duration-150;
+  }
+  .btn-primary {
+    @apply btn bg-squall text-white hover:bg-squall-dark;
+  }
+  .btn-quiet {
+    @apply btn border border-sea/20 bg-transparent text-sea hover:border-sea/50 hover:bg-white/60;
+  }
+  .btn-light {
+    @apply btn bg-white text-sea hover:bg-squall-soft;
+  }
+  .btn-ghost-dark {
+    @apply btn border border-white/25 text-white hover:border-white/60 hover:bg-white/5;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-[1200px] px-6 lg:px-10;
+  }
+}
+
+/* The isobar field in the hero draws itself once, on load. */
+.isobar {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: isobar-draw 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation-delay: calc(var(--i) * 110ms);
+}
+
+@keyframes isobar-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.isobar-label {
+  opacity: 0;
+  animation: isobar-fade 0.8s ease-out forwards;
+  animation-delay: 2s;
+}
+
+@keyframes isobar-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .isobar {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .isobar-label {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* FAQ accordion without JavaScript */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-plus {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 767px) {
+  .isobar-label {
+    display: none;
+  }
+}

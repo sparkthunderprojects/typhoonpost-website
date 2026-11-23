@@ -7,6 +7,8 @@ const COLUMNS = [
     title: 'Product',
     links: [
       { href: '/#features', label: 'Features' },
+      { href: '/personal', label: 'Personal' },
+      { href: '/business', label: 'Business' },
       { href: '/security', label: 'Security' },
       { href: '/privacy', label: 'Privacy' },
       { href: '/pricing', label: 'Pricing' },

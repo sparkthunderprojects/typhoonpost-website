@@ -165,6 +165,14 @@ export default async function HomePage() {
             <Link href="/pricing" className="font-semibold text-squall underline-offset-4 hover:underline">
               See the full pricing page
             </Link>
+            {' · '}
+            <Link href="/personal" className="font-semibold text-squall underline-offset-4 hover:underline">
+              About Personal
+            </Link>
+            {' · '}
+            <Link href="/business" className="font-semibold text-squall underline-offset-4 hover:underline">
+              About Business
+            </Link>
           </p>
         </div>
       </section>

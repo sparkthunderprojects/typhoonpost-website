@@ -8,6 +8,7 @@ const COLUMNS = [
     links: [
       { href: '/#features', label: 'Features' },
       { href: '/security', label: 'Security' },
+      { href: '/privacy', label: 'Privacy' },
       { href: '/pricing', label: 'Pricing' },
     ],
   },
@@ -27,7 +28,7 @@ export function Footer() {
         <div>
           <Logo light />
           <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-white/65">
-            Email, calendar and contacts in one calm workspace. Private by default.
+            Email, calendar and contacts in one calm workspace. Built to respect your privacy.
           </p>
         </div>
         {COLUMNS.map((col) => (

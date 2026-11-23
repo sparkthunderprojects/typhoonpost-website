@@ -71,7 +71,7 @@ export default async function HomePage() {
               Mail that holds steady.
             </h1>
             <p className="mt-7 max-w-[34ch] text-[19px] leading-relaxed text-slate-ink">
-              Typhoonpost brings your inbox, calendar and contacts into one calm workspace. Private by default, fast by design.
+              Typhoonpost brings your inbox, calendar and contacts into one calm workspace. Trackers blocked, fast by design.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link href="/early-access" className="btn-primary">
@@ -121,10 +121,10 @@ export default async function HomePage() {
         <div className="container-x grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <h2 id="security-title" className="max-w-[14ch] text-[clamp(2rem,4.2vw,3.5rem)] font-bold leading-[1.03] tracking-[-0.03em]">
-              Your mail stays yours.
+              Privacy you can check.
             </h2>
             <p className="mt-6 max-w-[38ch] text-[17px] leading-relaxed text-white/70">
-              Email holds the keys to everything else you do online. Typhoonpost is built so that nobody but you can read yours.
+              Email holds the keys to everything else you do online. Typhoonpost blocks trackers, cleans links and tells you plainly how your data is handled.
             </p>
             <Link href="/security" className="btn-ghost-dark mt-9">
               How we protect your mail

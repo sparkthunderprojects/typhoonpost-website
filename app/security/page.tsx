@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Icon } from '@/components/Icon';
 import { JsonLd } from '@/components/JsonLd';
 import { getFeatures } from '@/lib/content';
@@ -9,15 +10,15 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: 'Security and privacy',
   description:
-    'How Typhoonpost protects your email: account-level isolation, sanitised message display, authenticated sending with SPF and DKIM, and no ad profiling.',
+    'How Typhoonpost protects your email: tracker and image blocking, link cleaning, two-factor sign-in, account isolation, and an honest account of what is not encrypted yet.',
   alternates: { canonical: '/security' },
   openGraph: { url: `${SITE.url}/security`, title: 'Typhoonpost security and privacy' },
 };
 
 const DETAILS = [
   {
-    title: 'Isolation enforced by the database',
-    body: 'Each message, contact and calendar event belongs to one account. Access rules run inside the database itself, so even a bug in the app cannot hand one customer another customer\'s mail.',
+    title: 'Encrypted in transit',
+    body: 'Connections between your browser, the application and the database use TLS, so messages cannot be read or altered on the way.',
   },
   {
     title: 'Messages are cleaned before they are shown',
@@ -25,11 +26,11 @@ const DETAILS = [
   },
   {
     title: 'Mail that proves where it came from',
-    body: 'Outgoing mail is signed with DKIM and sent from servers authorised by SPF on your domain. Receivers can verify it really came from you, which protects your reputation and your recipients.',
+    body: 'Outgoing mail is signed with DKIM and sent from servers authorised by SPF on your domain. Receivers can verify it really came from you.',
   },
   {
-    title: 'Encrypted in transit',
-    body: 'Connections between your browser, the application and the database use TLS, so messages cannot be read or altered on the way.',
+    title: 'Not yet encrypted at rest',
+    body: 'Stored mail is protected by access rules, but it is not end-to-end or zero-access encrypted, so the people who run the service could technically reach it. Zero-access encryption is our next major project, and we will say so here when it ships, not before.',
   },
 ] as const;
 
@@ -50,14 +51,14 @@ export default async function SecurityPage() {
       />
       <section className="container-x pb-16 pt-16 lg:pt-24">
         <h1 className="max-w-[16ch] text-[clamp(2.5rem,5.6vw,4.5rem)] font-bold leading-[1] tracking-[-0.035em]">
-          Built so only you can read your mail.
+          Private by design, honest about the limits.
         </h1>
         <p className="mt-6 max-w-[54ch] text-[18px] leading-relaxed text-slate-ink">
-          Your inbox is the key to your accounts, your clients and your calendar. Here is how Typhoonpost keeps it protected.
+          Your inbox is the key to your accounts, your clients and your calendar. Here is what Typhoonpost does today, and what it does not do yet.
         </p>
       </section>
 
-      <section aria-label="How it works" className="container-x pb-24">
+      <section aria-label="Technical details" className="container-x pb-24">
         <div className="grid gap-px overflow-hidden rounded-3xl border border-sea/10 bg-sea/10 md:grid-cols-2">
           {DETAILS.map((d) => (
             <div key={d.title} className="bg-white p-8 lg:p-10">
@@ -71,7 +72,7 @@ export default async function SecurityPage() {
       <section aria-labelledby="principles" className="bg-sea py-24 text-white">
         <div className="container-x">
           <h2 id="principles" className="max-w-[16ch] text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.03] tracking-[-0.03em]">
-            What we promise.
+            What protects you today.
           </h2>
           <ul className="mt-12 grid gap-x-16 gap-y-10 md:grid-cols-2">
             {features.map((s) => (
@@ -87,6 +88,12 @@ export default async function SecurityPage() {
             ))}
           </ul>
         </div>
+      </section>
+
+      <section className="container-x py-20">
+        <p className="max-w-[56ch] text-[17px] leading-relaxed text-slate-ink">
+          Want the specifics of what we store and log? Read the <Link href="/privacy" className="font-semibold text-sea underline underline-offset-4">privacy page</Link>.
+        </p>
       </section>
     </>
   );

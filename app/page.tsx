@@ -74,14 +74,17 @@ export default async function HomePage() {
               Typhoonpost brings your inbox, calendar and contacts into one calm workspace. Trackers blocked, fast by design.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Link href="/early-access" className="btn-primary">
-                Get early access
+              <Link href="/early-access?plan=personal" className="btn-primary">
+                Get Personal
+              </Link>
+              <Link href="/early-access?plan=business" className="btn-quiet">
+                Get Business
               </Link>
               <a href={SITE.appUrl} className="btn-quiet">
                 Sign in
               </a>
             </div>
-            <p className="mt-5 text-[14px] text-slate-muted">Free during early access. No credit card needed.</p>
+            <p className="mt-5 text-[14px] text-slate-muted">Personal is free during early access. No credit card needed.</p>
           </div>
           <div className="lg:-mr-10">
             <InboxMock />
@@ -150,10 +153,10 @@ export default async function HomePage() {
       <section aria-labelledby="pricing-title" className="py-24 lg:py-32">
         <div className="container-x">
           <h2 id="pricing-title" className="max-w-[16ch] text-[clamp(2rem,4.2vw,3.5rem)] font-bold leading-[1.03] tracking-[-0.03em]">
-            Simple plans. Free while we are in early access.
+            Two versions. Pick yours.
           </h2>
           <p className="mt-5 max-w-[50ch] text-[17px] leading-relaxed text-slate-ink">
-            Start on Starter today. Move to Business when your team needs a custom domain and shared calendars.
+            Personal is for one person. Business is for teams that need their own domain, shared calendars and an admin console.
           </p>
           <div className="mt-12">
             <PlanTable plans={plans} />

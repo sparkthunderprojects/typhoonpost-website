@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: { url: `${SITE.url}/early-access`, title: 'Get early access to Typhoonpost' },
 };
 
-const PLANS = new Set(['starter', 'business', 'enterprise']);
+const PLANS = new Set(['personal', 'business']);
 
 export default async function EarlyAccessPage({ searchParams }: { searchParams: Promise<{ plan?: string }> }) {
   const { plan } = await searchParams;
@@ -22,7 +22,7 @@ export default async function EarlyAccessPage({ searchParams }: { searchParams: 
           Get your mailbox on typhoonpost.com.
         </h1>
         <p className="mt-6 max-w-[44ch] text-[18px] leading-relaxed text-slate-ink">
-          Early access is free. Leave your email and we will send your invite as soon as your spot opens.
+          Early access is free. Pick a version, leave your email and we will send your invite as soon as your spot opens.
         </p>
       </div>
       <div>

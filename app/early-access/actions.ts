@@ -6,7 +6,7 @@ export interface LeadState {
 }
 
 const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-const SOURCES = new Set(['website', 'home', 'starter', 'business', 'enterprise']);
+const SOURCES = new Set(['website', 'home', 'personal', 'business']);
 
 export async function joinEarlyAccess(_prev: LeadState, formData: FormData): Promise<LeadState> {
   // Honeypot: real people never fill this in.

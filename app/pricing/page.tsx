@@ -10,14 +10,14 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: 'Pricing',
   description:
-    'Typhoonpost is free during early access. Business and Enterprise plans add custom domains, shared calendars, admin controls and priority support.',
+    'Typhoonpost comes in two versions. Personal is free during early access. Business adds your own domain, shared calendars, an admin console and priority support.',
   alternates: { canonical: '/pricing' },
   openGraph: { url: `${SITE.url}/pricing`, title: 'Typhoonpost pricing' },
 };
 
 export default async function PricingPage() {
   const [plans, faqs] = await Promise.all([getPlans(), getFaqs()]);
-  const pricingFaqs = faqs.filter((f) => /cost|domain|ads|data/i.test(f.question));
+  const pricingFaqs = faqs.filter((f) => /cost|domain|ads|data|difference/i.test(f.question));
 
   return (
     <>
@@ -51,7 +51,7 @@ export default async function PricingPage() {
           Pricing that stays out of the way.
         </h1>
         <p className="mt-6 max-w-[52ch] text-[18px] leading-relaxed text-slate-ink">
-          Every plan includes mail, calendar and contacts. Pay per user only when you need a custom domain or admin controls.
+          Personal is for one person. Business is for teams. Both include mail, calendar, contacts and tasks.
         </p>
       </section>
       <section className="container-x pb-24" aria-label="Plans">

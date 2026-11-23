@@ -4,7 +4,7 @@ export const SITE = {
   appUrl: (process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.typhoonpost.com').replace(/\/$/, ''),
   title: 'Typhoonpost: private email, calendar and contacts',
   description:
-    'Typhoonpost is a private, fast email, calendar and contacts workspace for individuals and teams. Use your own domain, skip the ads and keep your inbox under control.',
+    'Typhoonpost is a private, fast email, calendar and contacts workspace. Personal is for individuals, Business is for teams with their own domain. No ads, and trackers blocked.',
 } as const;
 
 export const NAV = [

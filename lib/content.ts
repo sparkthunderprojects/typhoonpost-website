@@ -70,17 +70,17 @@ const FALLBACK_FEATURES: Feature[] = [
 ];
 
 const FALLBACK_PLANS: Plan[] = [
-  { slug: 'starter', name: 'Starter', tagline: 'For individuals trying Typhoonpost', price_monthly: 0, price_note: 'Free during early access', cta_label: 'Join early access', highlighted: false, features: ['1 mailbox on typhoonpost.com', 'Mail, calendar and contacts', '5 GB storage', 'Community support'], sort_order: 1 },
-  { slug: 'business', name: 'Business', tagline: 'For small teams that live in email', price_monthly: 6, price_note: 'per user / month, billed yearly', cta_label: 'Start free trial', highlighted: true, features: ['Custom domain', 'Shared and team calendars', '50 GB storage per user', 'Priority email support', 'Admin console'], sort_order: 2 },
-  { slug: 'enterprise', name: 'Enterprise', tagline: 'For organisations with extra requirements', price_monthly: 14, price_note: 'per user / month, billed yearly', cta_label: 'Talk to us', highlighted: false, features: ['Everything in Business', 'Unlimited aliases', 'Audit logs and retention rules', 'SSO and directory sync', 'Dedicated success manager'], sort_order: 3 },
+  { slug: 'personal', name: 'Personal', tagline: 'For you, your own inbox and your own address', price_monthly: 0, price_note: 'Free during early access', cta_label: 'Get Personal', highlighted: false, features: ['1 mailbox on typhoonpost.com', 'Mail, calendar, contacts and tasks', '5 GB storage', 'Tracker blocking and clean links', 'Community support'], sort_order: 1 },
+  { slug: 'business', name: 'Business', tagline: 'For teams that run on email', price_monthly: 6, price_note: 'per user / month, billed yearly', cta_label: 'Get Business', highlighted: true, features: ['Everything in Personal', 'Your own domain', 'Shared and team calendars', 'Admin console to add and remove people', '50 GB storage per user', 'Priority email support'], sort_order: 2 },
 ];
 
 const FALLBACK_FAQS: Faq[] = [
-  { question: 'What is Typhoonpost?', answer: 'Typhoonpost is a modern email, calendar and contacts workspace. It is built for people who want the polish of the big suites without the clutter or the ads.', sort_order: 1 },
+  { question: 'What is Typhoonpost?', answer: 'Typhoonpost is a modern email, calendar, contacts and tasks workspace. It comes in two versions: Personal for individuals and Business for teams.', sort_order: 1 },
   { question: 'Is it ready to use today?', answer: 'Typhoonpost is in early access. You can create an account, send and receive mail, and use the calendar and contacts while we finish the remaining features.', sort_order: 2 },
-  { question: 'Can I use my own domain?', answer: 'Yes. Business plans let you use your own domain, with sending authenticated through SPF and DKIM.', sort_order: 3 },
+  { question: 'Can I use my own domain?', answer: 'Yes, on Business. Personal gives you an address on typhoonpost.com. Business lets your team use its own domain, with sending authenticated through SPF and DKIM.', sort_order: 3 },
   { question: 'Who can read my email?', answer: 'Messages are stored per account behind database-level access rules, so other customers cannot open them, and connections are encrypted with TLS. Today, mail is not yet end-to-end or zero-access encrypted at rest, which means the operators of the service can technically access stored mail. We do not read it, and we are working toward encryption that removes that access. You can read exactly what we log and keep on our privacy page.', sort_order: 4 },
   { question: 'Do you show ads or sell my data?', answer: 'No. Typhoonpost does not build ad profiles from your messages and does not sell your data. Remote images and tracking pixels in incoming mail are blocked by default, and you can export or delete your data at any time.', sort_order: 5 },
+  { question: 'What is the difference between Personal and Business?', answer: 'Personal is one mailbox for one person. Business is for teams: it adds your own domain, shared calendars and an admin console for adding and removing people. Both have the same privacy protections and the same apps.', sort_order: 3 },
   { question: 'Can I move over from another provider?', answer: 'Import tools are on the roadmap. In the meantime you can forward mail from your old address while you switch over.', sort_order: 6 },
-  { question: 'How much does it cost?', answer: 'Starter is free during early access. Business and Enterprise plans are billed per user, and you can see the details on the pricing page.', sort_order: 7 },
+  { question: 'How much does it cost?', answer: 'Personal is free during early access. Business is billed per user. You can see the details on the pricing page.', sort_order: 7 },
 ];

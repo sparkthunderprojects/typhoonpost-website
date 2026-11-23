@@ -9,7 +9,7 @@ function price(p: Plan) {
 /** One joined panel rather than three floating cards; the middle plan is inverted. */
 export function PlanTable({ plans }: { plans: Plan[] }) {
   return (
-    <div className="grid overflow-hidden rounded-3xl border border-sea/10 bg-white shadow-lift md:grid-cols-3">
+    <div className="grid overflow-hidden rounded-3xl border border-sea/10 bg-white shadow-lift md:grid-cols-2">
       {plans.map((p) => (
         <section
           key={p.slug}
